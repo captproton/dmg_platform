@@ -1,6 +1,7 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  resources :posts
   mount Avo::Engine, at: Avo.configuration.root_path
   get '/privacy', to: 'home#privacy'
   get '/terms', to: 'home#terms'
