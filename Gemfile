@@ -96,3 +96,5 @@ group :development, :test do
 end
 gem "standard", group: [:development, :test]
 gem "avo"
+
+gem "vite_rails", "~> 3.0"
