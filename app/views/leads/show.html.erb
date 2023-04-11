@@ -1,0 +1,13 @@
+<!-- html.erb show page of Lead with the attributes  name,phone,email_address, subject, message_body using tailwindcss -->
+
+<h1 class="mb-2 mt-0 text-5xl font-medium leading-tight text-primary" >thank you for contacting us</h1>
+<h2 class="mb-2 mt-0 text-5xl font-small leading-tight text-primary" >we will get back to you soon</h2>
+
+<h3>your details are as follows</h3>
+<p>name: <%= @lead.name %></p>
+<p>phone: <%= @lead.phone %></p>
+<p>email: <%= @lead.email_address %></p>
+<p>subject: <%= @lead.subject %></p>
+<p>message: <%= @lead.message_body %></p>
+<p>&nbsp;</p>
+<%= link_to "<< back to home", root_path, class: "btn btn-primary text-slate-50 bg-sky-500/75" %>
