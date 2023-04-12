@@ -1,10 +1,11 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  resources :blog_articles
   resources :leads
   resources :legals
   resources :posts
-  mount Avo::Engine, at: Avo.configuration.root_path
+
   get '/privacy',     to: 'home#privacy'
   get '/terms',       to: 'home#terms'
 
@@ -24,6 +25,10 @@ Rails.application.routes.draw do
   resources  :leads,                    only: [:new, :show]
   resources  :newsletter_subscription,  only: [:new, :show]
 
+  authenticate :user do
+    mount Avo::Engine, at: Avo.configuration.root_path
+  end
+  
 authenticate :user, lambda { |u| u.admin? } do
   mount Sidekiq::Web => '/sidekiq'
 
