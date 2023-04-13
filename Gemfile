@@ -98,3 +98,5 @@ gem "standard", group: [:development, :test]
 gem "avo"
 
 gem "vite_rails", "~> 3.0"
+
+gem "letter_opener", "~> 1.8"
