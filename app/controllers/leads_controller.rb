@@ -10,6 +10,7 @@ class LeadsController < ApplicationController
     def create
         @lead = Lead.new(lead_params)
         if @lead.save
+            LeadNotification.with(lead: @lead).deliver_later(User.all)
             redirect_to @lead
         else
             render 'new'

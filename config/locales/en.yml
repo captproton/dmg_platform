@@ -31,3 +31,6 @@
 
 en:
   hello: "Hello world"
+  notifications:
+    lead_notification:
+      message: "new lead, %{lead}"
