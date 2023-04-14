@@ -1,8 +1,39 @@
-<h1>hero goes here</h1>
+<!-- hero section with tags section, title, byline, published_at, and read time -->
+<section class="hero bg-blue-200">
+    <div class="tags">
+        <a href="/tags/tech">Tech</a>
+    </div>
+    <div class="">
+        <h1><%= @blog_article.title %></h1>
+    
+        <div class="byline">
+            <span class="">by</span>
+            <a href="#">Michael Tanner</a>
+            <span class="date">• <%= @blog_article.reading_time %></span>
+        </div>
+    </div>
+</section>
 
-<h2>social embed goes here (Screenshot that links to platform entry) </h2>
+<!-- article section with article content -->
+<section class="article">
+    <div class="container">
+        <div class="article-content">
+            <%= @blog_article.content %>
+        </div>
+    </div>
+</section>
 
-<h3>article goes here</h3>
+<!-- suggested article section -->
+<section class="suggested-article bg-slate-700">
+    <div class="container">
+        <div class="suggested-article-content">
+            <h2>Suggested Article</h2>
+            <h3><a href="#">How to build a blog with Rails</a></h3>
+        </div>
+        <!--filler image to the right of the h2 -->
+        <div class="suggested-article-image">
+            <img src="https://picsum.photos/200/300" alt="">
+        </div>
+    </div>
 
-
-<h3>article footer that links to the suggested article</h3>
+</section>
