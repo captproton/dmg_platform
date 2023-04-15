@@ -3,6 +3,7 @@ class BlogArticle < ApplicationRecord
 
   # scopes
   scope :pinned, -> { where("pin_number > ? AND published_at <= ?", 0, Time.current) }
+  scope :published, -> { where("published_at <= ?", Time.current) }
   # Book.where("title = ? AND out_of_print = ?", params[:title], false)
 
   # extend FriendlyId
@@ -19,6 +20,14 @@ class BlogArticle < ApplicationRecord
     # https://alexanderpaterson.com/posts/showing-estimated-reading-time-on-a-rails-blog-post
     text =  self.content.to_plain_text
     result = (text.scan(/\w+/).length / WORDS_PER_MINUTE).to_i ||= 1
+  end
+
+  def excerpt
+    self.content.to_plain_text.truncate(90)
+  end
+
+  def publication_date
+    self.published_at.strftime("%B %d, %Y")
   end
 
   def pinned?

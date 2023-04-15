@@ -10,6 +10,10 @@
         background-color: #eee;
         overflow: hidden;
     }
+    .content-inner {
+        /* contain link of entire-meta-link */
+        position: relative;
+    }
     .entire-meta-link {
         position: absolute;
         top: 0;
@@ -25,33 +29,30 @@
         position: relative;
         z-index: 110;
     }
+  h3 {
+    font-family: Bebas Neue;
+    font-size: 35px;
+    line-height: 35px;
+    font-weight: 400;
+  }
+
+
 </style>
 
 <h1>hero goes here (rotating banner linking to pinned articles)</h1>
 
-<div class="masonry">
+<div class="post-area">
+    <div class="posts-container">
+        <div class="masonry">
+            <%= render partial: "blog_articles/article_content_card", collection: @blog_articles, as: :blog_article %>
+            <%= render partial: "blog_articles/article_content_card", collection: @blog_articles, as: :blog_article %>
+            <%= render partial: "blog_articles/article_content_card", collection: @blog_articles, as: :blog_article %>
+        <!-- 
+        https://codepen.io/matthias-douwes/pen/VwPVorP -- masonary grid
+        -->
 
-  <% @blog_articles.each do |blog_article| %>
 
-    <article class="masonry-item" style="grid-row-end: span 30;object-fit: cover;">
-        <div src="https://unsplash.it/700/800?image=1" 
-            alt="Masonry Brick #1" 
-            class="masonry-content" 
-            style="content: ;/*! object-fit: cover; */">
-            <%= link_to "", blog_article, class: "entire-meta-link" %>
-            <%= render partial: "blog_articles/article_content_card", 
-                                locals: {blog_article: blog_article} 
-            %>
         </div>
-
-    </article >
-
-
- 
-    <% end %>
-<!-- 
-https://codepen.io/matthias-douwes/pen/VwPVorP -- masonary grid
- -->
-
-
+    </div>
 </div>
+
