@@ -1,3 +1,57 @@
+<style>
+    .masonry {
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: repeat(auto-fill, minmax(288px,1fr));
+        grid-auto-rows: 0;
+    }
+
+    .masonry-item {
+        background-color: #eee;
+        overflow: hidden;
+    }
+    .entire-meta-link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        z-index: 101;
+        height: 100%;
+    }        
+    .meta-category {
+        padding: 20px 30px 0 30px;
+        display: block;
+        position: relative;
+        z-index: 110;
+    }
+</style>
+
 <h1>hero goes here (rotating banner linking to pinned articles)</h1>
 
-<h2>masonary grid of articles </h2>
+<div class="masonry">
+
+  <% @blog_articles.each do |blog_article| %>
+
+    <article class="masonry-item" style="grid-row-end: span 30;object-fit: cover;">
+        <div src="https://unsplash.it/700/800?image=1" 
+            alt="Masonry Brick #1" 
+            class="masonry-content" 
+            style="content: ;/*! object-fit: cover; */">
+            <%= link_to "", blog_article, class: "entire-meta-link" %>
+            <%= render partial: "blog_articles/article_content_card", 
+                                locals: {blog_article: blog_article} 
+            %>
+        </div>
+
+    </article >
+
+
+ 
+    <% end %>
+<!-- 
+https://codepen.io/matthias-douwes/pen/VwPVorP -- masonary grid
+ -->
+
+
+</div>
