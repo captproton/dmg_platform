@@ -22,4 +22,9 @@ class HomeController < ApplicationController
 
   def social_highlights
   end
+
+  def slider
+    # @slider = Slider.find(params[:id])
+    # render :layout => false
+  end
 end

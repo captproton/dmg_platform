@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/about-us',    to: 'home#about_us'
   get '/content',     to: 'home#content'
   get '/press',       to: 'home#press'
+  get '/slider',       to: 'home#slider'
 
   get '/videos',   to: 'home#videos'
   get '/social_highlights',   to: 'home#social_highlights'

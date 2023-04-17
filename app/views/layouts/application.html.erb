@@ -102,38 +102,44 @@
   <main class="col-span-1 md:col-span-4 px-4 py-8 overflow-y-auto ">
 
 
-      <%#= render 'shared/navbar' %>
-      <%#= render 'shared/notices' %>
+    <%#= render 'shared/navbar' %>
+    <%#= render 'shared/notices' %>
 
-        <%= yield %>
-    </main>
+      <%= yield %>
+  </main>
 
-    <%= render 'shared/footer' %>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-      // JavaScript code to toggle sublist
-        const headings = document.querySelectorAll('.cursor-pointer');
-        headings.forEach(heading => {
-          heading.addEventListener('click', function() {
-            const sublist = this.querySelector('ul');
-            sublist.classList.toggle('hidden');
-            const icon = this.querySelector('svg');
-            icon.classList.toggle('rotate-180');
-          });
+  <%= render 'shared/footer' %>
+  <!-- JavaScript code to toggle sublist -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    // JavaScript code to toggle sublist
+      const headings = document.querySelectorAll('.cursor-pointer');
+      headings.forEach(heading => {
+        heading.addEventListener('click', function() {
+          const sublist = this.querySelector('ul');
+          sublist.classList.toggle('hidden');
+          const icon = this.querySelector('svg');
+          icon.classList.toggle('rotate-180');
         });
-        // JavaScript code to toggle hamburger menu
-        const hamburgerButton = document.getElementById("hamburger-button");
-        const navMenu = document.getElementById("nav-menu");
-
-        hamburgerButton.addEventListener("click", function() {
-          navMenu.classList.toggle("hidden");
-        });
-
       });
+      // JavaScript code to toggle hamburger menu
+      const hamburgerButton = document.getElementById("hamburger-button");
+      const navMenu = document.getElementById("nav-menu");
+
+      hamburgerButton.addEventListener("click", function() {
+        navMenu.classList.toggle("hidden");
+      });
+
+    });
 
 
     </script>
+    <!-- gsap libs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Flip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/TextPlugin.min.js"></script>
+
+
 
  
   </body>

@@ -1,6 +1,7 @@
 class BlogArticlesController < ApplicationController
     def index
         @blog_articles = BlogArticle.published
+        @pinned_articles = BlogArticle.pinned.first(4)
     end
 
     def show
