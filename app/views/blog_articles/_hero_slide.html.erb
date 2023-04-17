@@ -1,5 +1,4 @@
-<!-- hero section with tags section, title, byline, published_at, and read time -->
-<section class="hero bg-blue-200">
+<div class="slide">
 <div class="nectar-recent-post-slide no-bg-img post-ref-0 tallest active" style="z-index: 20; opacity: 1;">
 
     <div class="row-bg using-image translate" data-parallax-speed="fast" style="transform: translate3d(0px, 0px, 0px); will-change: transform;">
@@ -19,16 +18,22 @@
                 <h2 class="post-ref-1">
                     <a href="https://garyvaynerchuk.com/garyvees-top-5-dailyvees-of-2022-to-kickstart-2023/" class="full-slide-link">
                         <span>
-                            <%= @blog_article.title %>
+                            <%= blog_article.title %>
                         </span> 
                     </a>
                 </h2>
 
+                <!-- button -->
+
+                <%= link_to blog_article do %>
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        <span>Read Article </span>
+                    </button>
+                <% end %>
             </div><!--/inner-wrap-->
 
         </div><!--/recent-post-container-->
-        <%= image_tag @blog_article.cover_photo, class: "sp-no-webp attachment-large size-large skip-lazy wp-post-image sp-no-webp" %>
+        <%= image_tag blog_article.cover_photo, class: "sp-no-webp attachment-large size-large skip-lazy wp-post-image sp-no-webp" %>
 
     </div>
-
-</section>
+</div>
