@@ -3,9 +3,11 @@ class HomeController < ApplicationController
   end
 
   def terms
+    @page = Legal.find_by(title: "Terms of Use")
   end
 
   def privacy
+    @page = Legal.find_by(title: "Privacy Policy")
   end
 
   def contact_us

@@ -5,7 +5,8 @@ class BlogArticlesController < ApplicationController
     end
 
     def show
-        @blog_article = BlogArticle.published.find(params[:id])
+        # @blog_article = BlogArticle.published.find(params[:id])
+        @blog_article = BlogArticle.published.friendly.find(params[:id])
     end
     
 end

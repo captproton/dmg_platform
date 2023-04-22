@@ -1,6 +1,7 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  get 'marketing_pages/show'
   resources :blog_articles
   resources :leads
   resources :legals
@@ -25,6 +26,7 @@ Rails.application.routes.draw do
   resources  :books,                    only: [:index, :show]
   resources  :leads,                    only: [:new, :show]
   resources  :newsletter_subscription,  only: [:new, :show]
+  resources  :marketing_pages,          only: [:show]
 
   authenticate :user do
     mount Avo::Engine, at: Avo.configuration.root_path

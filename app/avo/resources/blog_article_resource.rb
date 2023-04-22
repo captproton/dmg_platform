@@ -1,4 +1,9 @@
 class BlogArticleResource < Avo::BaseResource
+  # friendly_id
+  self.resolve_find_scope = ->(model_class:) do
+    model_class.friendly
+  end
+
   self.title = :id
   self.includes = []
   # self.search_query = -> do

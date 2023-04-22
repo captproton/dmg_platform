@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_14_195957) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_22_190504) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -67,6 +67,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_14_195957) do
     t.datetime "updated_at", null: false
     t.integer "pin_number", default: 0, null: false
     t.datetime "published_at"
+    t.string "slug"
+    t.index ["slug"], name: "index_blog_articles_on_slug", unique: true
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -94,6 +96,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_14_195957) do
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "marketing_pages", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_marketing_pages_on_slug", unique: true
   end
 
   create_table "notifications", force: :cascade do |t|

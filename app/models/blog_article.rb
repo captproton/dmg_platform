@@ -4,10 +4,11 @@ class BlogArticle < ApplicationRecord
   # scopes
   scope :pinned, -> { where("pin_number > ? AND published_at <= ?", 0, Time.current) }
   scope :published, -> { where("published_at <= ?", Time.current) }
-  # Book.where("title = ? AND out_of_print = ?", params[:title], false)
+  scope :recent, -> { order(published_at: :desc) }
 
-  # extend FriendlyId
-  # friendly_id :title, use: :slugged
+  #
+  extend FriendlyId
+  friendly_id :title, use: :slugged
   
   WORDS_PER_MINUTE = 150
   # belongs_to    :user
