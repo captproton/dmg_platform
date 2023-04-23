@@ -439,6 +439,7 @@ DEPENDENCIES
   friendly_id (~> 5.4)
   image_processing (~> 1.2)
   importmap-rails
+  inline_svg (~> 1.9)
   jbuilder
   jsbundling-rails
   letter_opener (~> 1.8)

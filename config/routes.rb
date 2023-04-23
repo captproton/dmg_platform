@@ -1,6 +1,7 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  resources :platforms
   get 'marketing_pages/show'
   resources :blog_articles
   resources :leads
