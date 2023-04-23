@@ -102,3 +102,5 @@ gem "vite_rails", "~> 3.0"
 gem "letter_opener", "~> 1.8"
 
 gem "inline_svg", "~> 1.9"
+
+gem "acts-as-taggable-on", "~> 9.0"
