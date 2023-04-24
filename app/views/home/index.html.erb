@@ -90,7 +90,28 @@
         width: 1px;
     }
 </style>
+<section class="container mx-auto px-4 py-8">
+<h1 class="text-2xl md:text-4xl lg:text-6xl"><%= @intro_article.title %></h1>
 
+<div><%= @intro_article.content %></div>
+
+</section>
+<section class="container mx-auto px-4 py-8">
+    <!-- leading blog articles -->
+    <% @positioning_articles.each do |article| %>
+        <h1 class="text-2xl md:text-4xl lg:text-6xl"><%= article.title %></h1>
+    <% end %>
+</section>
+
+
+<section class="container mx-auto px-4 py-8">
+    <!-- leading blog articles -->
+    <h2 class="text-2xl md:text-4xl lg:text-6xl">READ THIS</h2>
+    <% @pinned_articles.each do |article| %>
+        <h1 class="text-2xl md:text-4xl lg:text-6xl"><%= article.title %></h1>
+        <div> <%= article.excerpt %></div>
+    <% end %>
+</section>
 
 
 

@@ -18,6 +18,7 @@ class MarketingPageResource < Avo::BaseResource
   field :cover_photo, as: :file, is_image: true, link_to_resource: true
   field :tags,
     as: :tags,
+    acts_as_taggable_on: :tags,
     close_on_select: true,
     placeholder: "Add some tags"
 
