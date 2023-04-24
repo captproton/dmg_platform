@@ -6,10 +6,14 @@ class BlogArticle < ApplicationRecord
   scope :published, -> { where("published_at <= ?", Time.current) }
   scope :recent, -> { order(published_at: :desc) }
 
-  #
+  # friendly_id gem
   extend FriendlyId
   friendly_id :title, use: :slugged
   
+  # acts_as_taggable_on :tags
+  acts_as_taggable_on :tags
+  # acts_as_taggable_on :skills, :interests, :categories #You can also configure multiple tag types per model
+
   WORDS_PER_MINUTE = 150
   # belongs_to    :user
 

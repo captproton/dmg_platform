@@ -16,5 +16,10 @@ class MarketingPageResource < Avo::BaseResource
   # add fields here
   field :content, as: :trix
   field :cover_photo, as: :file, is_image: true, link_to_resource: true
+  field :tags,
+    as: :tags,
+    acts_as_taggable_on: :tags,
+    close_on_select: true,
+    placeholder: "Add some tags"
 
 end
