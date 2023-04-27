@@ -28,3 +28,4 @@ document.addEventListener("turbo:load", () => {
 })
 import "trix"
 import "@rails/actiontext"
+import "lite-youtube-embed"

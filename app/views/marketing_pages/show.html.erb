@@ -1,0 +1,13 @@
+<!-- hero image with the title text and subtitle text on the left site -->
+<% hero_background_image = url_for(@page.cover_photo)%>
+
+
+<div class="grid grid-cols-2 grid-rows-3 bg-cover bg-center bg-no-repeat" style="background-image: url('<%= hero_background_image %>'); height: 400px;">
+
+  <div class="col-span-1 row-span-2 flex flex-col justify-center items-left p-8 bg-opacity-50 bg-gray-900  ">
+    <h1 class="text-4xl text-white font-bold mb-4"><%= @page.title %></h1>
+    </div>
+</div>
+
+
+<%= @page.content %>
