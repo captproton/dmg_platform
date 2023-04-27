@@ -1,60 +1,105 @@
-<section class="container mx-auto px-4 py-8">
+<style>
+  h2 {
+    color: #fff;
+    font-family: Bebas Neue;
+    text-transform: uppercase;
+    font-size: 45px;
+    line-height: 50px;
+    font-weight: 400;
+    margin-bottom: 7px;
+  }
+  h3 {
+    font-family: Bebas Neue;
+    font-size: 35px;
+    line-height: 35px;
+    font-weight: 400;    
+  }
+input[type=text], select, textarea, .message {
+  font-size: 15px;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 8px;
+  background-color: rgba(255,255,255,.1);
+  border-color: rgba(255,255,255,0);
+  color: #fff;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  font-family: inherit;
+  line-height: 24px;
+  transition: all .2s ease;      
+}
+label {
+  font-family: Oswald;
+  text-transform: uppercase !important;
+  margin-top: 20px;
+  margin-bottom: 6px;
+  font-size: 18px !important;
+  line-height: 28px;
+  font-weight: 700 !important;
+  color: #fff !important;
+</style>
 
-  <h1 class="text-2xl md:text-4xl lg:text-6xl">Contact</h1>
-  <p>A few different options for getting in touch with the team.</p>
 
-  <h2 class="text-xl md:text-2xl lg:text-4xl">Hire Dice Media Group</h2>
-  Dice Media Group is a full-service digital agency built for the now. We handle strategy, creative, paid media, production, and more – <%= link_to "explore the full range of service here", "/marketing_pages/hire-us" %>.</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
-  <h2 class="text-xl md:text-2xl lg:text-4xl">Press</h2>
-  <p>For all interviews, media opportunities, and anything else press-related</p>
+  <section class=""col-span-1 md:col-span-1 lg:col-span-1">
 
-  <h2 class="text-xl md:text-2xl lg:text-4xl">Advertising</h2>
-  <p>For all advertising opportunities, including sponsorships, native, and more</p>
+    <h2 class="text-2xl md:text-4xl lg:text-6xl">Contact</h2>
+    <p>A few different options for getting in touch with the team.</p>
 
-  <h2 class="text-xl md:text-2xl lg:text-4xl">General Inquiry</h2>
-  <p>Basically if nothing else applies to you, hit me here</p>
-</section>
+    <h3 class="text-xl md:text-2xl lg:text-4xl">Hire Dice Media Group</h3>
+    Dice Media Group is a full-service digital agency built for the now. We handle strategy, creative, paid media, production, and more – <%= link_to "explore the full range of service here", "/marketing_pages/hire-us" %>.</p>
 
-<section class="container mx-auto px-4 py-8">
+    <h3 class="text-xl md:text-2xl lg:text-4xl">Press</h3>
+    <p>For all interviews, media opportunities, and anything else press-related</p>
 
-  <!-- rails form for leads resource using tailwindcss -->
-  <%= form_with model: @lead, class: "w-full max-w-lg" do |f| %>
-    <div class="flex flex-wrap -mx-3 mb-6">
-      <div class="w-full px-3">
-        <%= f.label :name, class: "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" %>
-        <%= f.text_field :name, class: "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
+    <h3 class="text-xl md:text-2xl lg:text-4xl">Advertising</h3>
+    <p>For all advertising opportunities, including sponsorships, native, and more</p>
+
+    <h3 class="text-xl md:text-2xl lg:text-4xl">General Inquiry</h3>
+    <p>Basically if nothing else applies to you, hit me here</p>
+  </section>
+
+  <section class="col-span-1 md:col-span-2 lg:col-span-2">
+
+    <!-- rails form for leads resource using tailwindcss -->
+    <%= form_with model: @lead, class: "w-full max-w-lg" do |f| %>
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full px-3">
+          <%= f.label :name, class: "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" %>
+          <%= f.text_field :name, class: "appearance-none block w-full  text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight" %>
+        </div>
       </div>
-    </div>
-    <div class="flex flex-wrap -mx-3 mb-6">
-      <div class="w-full px-3">
-        <%= f.label :email, class: "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" %>
-        <%= f.text_field :email, class: "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full px-3">
+          <%= f.label :email, class: "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" %>
+          <%= f.text_field :email, class: "appearance-none block w-full  text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none " %>
+        </div>
       </div>
-    </div>
-    <div class="flex flex-wrap -mx-3 mb-6">
-      <div class="w-full px-3">
-        <%= f.label :phone, class: "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" %>
-        <%= f.text_field :phone, class: "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full px-3">
+          <%= f.label :phone, class: "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" %>
+          <%= f.text_field :phone, class: "appearance-none block w-full  text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none " %>
+        </div>
       </div>
-    </div>
-    <div class="flex flex-wrap -mx-3 mb-6">
-      <div class="w-full px-3">
-        <%= f.label :subject, class: "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" %>
-        <%= f.text_field :subject, class: "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full px-3">
+          <%= f.label :subject, class: "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" %>
+          <%= f.text_field :subject, class: "appearance-none block w-full  text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none" %>
+        </div>
       </div>
-    </div>
-    <div class="flex flex-wrap -mx-3 mb-6">
-      <div class="w-full px-3">
-        <%= f.label :message, class: "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" %>
-        <%= f.text_area :message, class: "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full px-3">
+          <%= f.label :message, class: "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" %>
+          <%= f.text_area :message, class: "appearance-none block w-full  text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none" %>
+        </div>
       </div>
-    </div>
-      <div class="md:flex md:items-center">
-          <div class="w-full px-3">
-              <%= f.submit "Submit", class: "shadow bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" %>  
-          </div>
-      </div>
-  <% end %>
+        <div class="md:flex md:items-center">
+            <div class="w-full px-3">
+                <%= f.submit "Submit", class: "shadow bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" %>  
+            </div>
+        </div>
+    <% end %>
 
-</section>
+  </section>
+</div>
