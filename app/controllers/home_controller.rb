@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @intro_article = MarketingPage.tagged_with(["home"], :match_all => true).first
+    @intro_article =MarketingPage.tagged_with(["home", "intro"]).first
     @positioning_articles = MarketingPage
       .tagged_with(["home", "more-info"], :match_any => true)
       .tagged_with(["more-info"], :match_any => true)
