@@ -53,7 +53,7 @@
     position: relative;
     flex-direction: column;
     width: 100vw;
-    height: 50vh;
+    height: 80vh;
   }
 
   .controls {
@@ -108,18 +108,16 @@
 <!--  Thanks GreenSock!   -->
 
 <div class="slider-main">
-
 <div class="slides-container">
   <div class="slides-inner">
   <%= render  partial: "blog_articles/hero_slide", collection: @pinned_articles, as: :blog_article %>
 
   </div>
 </div>
-
 </div>            
 
 <div class="post-area">
-    <div class="posts-container">
+  <div class="posts-container">
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">            
       <%= render partial: "blog_articles/article_content_card", collection: @blog_articles, as: :blog_article %>
         <!-- 
@@ -127,8 +125,8 @@
         -->
 
 
-        </div>
     </div>
+  </div>
 </div>
 
 <!-- gsap libs -->
