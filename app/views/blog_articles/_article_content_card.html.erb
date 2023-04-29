@@ -1,55 +1,37 @@
-<article class="masonry-item" style="grid-row-end: span 45;object-fit: cover;">
-  
-    
-  <div class="inner-wrap animated">
-    
-    <div class="post-content">
-
-      <div class="content-inner">
-        
- 
-        <%= link_to blog_article, 'aria-label': blog_article.title, class: "entire-meta-link" do %><% end %>
-        
-        <span class="post-featured-img">
-            <picture class="attachment-large size-large skip-lazy wp-post-image sp-no-webp" title="">
-                <!-- <source srcset="https://garyvaynerchuk.com/wp-content/uploads/2023/04/Artboard-3-5-1024x535.webp 1024w,https://garyvaynerchuk.com/wp-content/uploads/2023/04/Artboard-3-5-300x157.webp 300w,https://garyvaynerchuk.com/wp-content/uploads/2023/04/Artboard-3-5-150x78.webp 150w,https://garyvaynerchuk.com/wp-content/uploads/2023/04/Artboard-3-5-768x401.webp 768w,https://garyvaynerchuk.com/wp-content/uploads/2023/04/Artboard-3-5.webp 1200w" sizes="(min-width: 1600px) 20vw, (min-width: 1300px) 25vw, (min-width: 1000px) 33.3vw, (min-width: 690px) 50vw, 100vw" type="image/webp"><source srcset="https://garyvaynerchuk.com/wp-content/uploads/2023/04/Artboard-3-5-1024x535.png 1024w, https://garyvaynerchuk.com/wp-content/uploads/2023/04/Artboard-3-5-300x157.png 300w, https://garyvaynerchuk.com/wp-content/uploads/2023/04/Artboard-3-5-150x78.png 150w, https://garyvaynerchuk.com/wp-content/uploads/2023/04/Artboard-3-5-768x401.png 768w, https://garyvaynerchuk.com/wp-content/uploads/2023/04/Artboard-3-5.png 1200w" sizes="(min-width: 1600px) 20vw, (min-width: 1300px) 25vw, (min-width: 1000px) 33.3vw, (min-width: 690px) 50vw, 100vw" type="image/png">
-                
-                <img src="https://garyvaynerchuk.com/wp-content/uploads/2023/04/Artboard-3-5-1024x535.png" class="sp-no-webp attachment-large size-large skip-lazy wp-post-image sp-no-webp" title="" alt="" srcset="https://garyvaynerchuk.com/wp-content/uploads/2023/04/Artboard-3-5-1024x535.png 1024w, https://garyvaynerchuk.com/wp-content/uploads/2023/04/Artboard-3-5-300x157.png 300w, https://garyvaynerchuk.com/wp-content/uploads/2023/04/Artboard-3-5-150x78.png 150w, https://garyvaynerchuk.com/wp-content/uploads/2023/04/Artboard-3-5-768x401.png 768w, https://garyvaynerchuk.com/wp-content/uploads/2023/04/Artboard-3-5.png 1200w" sizes="(min-width: 1600px) 20vw, (min-width: 1300px) 25vw, (min-width: 1000px) 33.3vw, (min-width: 690px) 50vw, 100vw" width="1024" height="535"> -->
-
-                <%= image_tag blog_article.cover_photo, class: "sp-no-webp attachment-large size-large skip-lazy wp-post-image sp-no-webp" %>
-            </picture>
-        </span>
-        <span class="meta-category">
-            <%# tags go here %>
-            <a class="business-leadership" href="/">Business &amp; Leadership</a>
-            <a class="communication" href="/">Communication</a>
-            <%# <a class="company-culture" href="https://garyvaynerchuk.com/topics/company-culture/">Company Culture</a><a class="content" href="https://garyvaynerchuk.com/topics/content/">Content</a><a class="entrepreneurship" href="https://garyvaynerchuk.com/topics/entrepreneurship/">Entrepreneurship</a><a class="general" href="https://garyvaynerchuk.com/topics/general/">General</a><a class="personal-development" href="https://garyvaynerchuk.com/topics/personal-development/">Personal Development</a><a class="personal-growth" href="https://garyvaynerchuk.com/topics/personal-growth/">Personal Growth</a><a class="vaynermedia" href="https://garyvaynerchuk.com/topics/vaynermedia/">VaynerMedia</a> %>
-        </span>         
-        <div class="article-content-wrap">
-          
-          <div class="post-header">
-            <h3 class="title">
-                <%= link_to blog_article.title, blog_article %>
-            </h3>
-          </div>
-          
-          <div class="excerpt">
-            <p><%= blog_article.excerpt %></p>
-          </div>
-          <div class="grav-wrap">
-            <a href="/"></a>
-            <div class="text">
-                <a href="/" rel="author">Dice Media Group</a>
-                <span><%= blog_article.publication_date %></span>
-            </div>
-          </div>
-        </div><!--article-content-wrap-->
-        
-      </div><!--/content-inner-->
-        
-    </div><!--/post-content-->
-      
-  </div><!--/inner-wrap-->
-    
-
-</article >
+<div class="bg-white rounded-lg overflow-hidden shadow-lg">
+<a href="#">
+  <img src="https://source.unsplash.com/random" 
+       alt="Article image" 
+       class="w-full h-48 object-cover">
+</a>
+<div class="p-4">
+  <div class="mb-2 max-w-full">
+    <a href="#" class="inline-block bg-blue-200 rounded-full px-3 py-1 text-sm font-semibold text-blue-700 mr-2 mb-2">Category 1</a>
+    <a href="#" class="inline-block bg-blue-200 rounded-full px-3 py-1 text-sm font-semibold text-blue-700 mr-2 mb-2">Category 2</a>
+    <a href="#" class="inline-block bg-blue-200 rounded-full px-3 py-1 text-sm font-semibold text-blue-700 mr-2 mb-2">Category 3</a>
+    <a href="#" class="inline-block bg-blue-200 rounded-full px-3 py-1 text-sm font-semibold text-blue-700 mr-2 mb-2">Category 4</a>
+    <a href="#" class="inline-block bg-blue-200 rounded-full px-3 py-1 text-sm font-semibold text-blue-700 mr-2 mb-2">Category 5</a>
+  </div>
+  <div class="relative">
+    <div class="absolute inset-0 z-10">
+      <a href="http://google.com" class="block w-full h-full"></a>
+    </div>
+    <h2 class="text-xl font-semibold mb-2 ">
+      <a href="#" class="black-text-link">Article title goes here</a>
+    </h2>
+    <p class="text-gray-700 text-base mb-4">Article excerpt goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor faucibus lectus, non pharetra dolor ultricies et.</p>
+  </div>
+  <a href="#">
+    <div class="flex items-center">
+      <img src="https://source.unsplash.com/random" 
+           alt="Author" 
+           class="w-10 h-10 rounded-full mr-4">
+    <div>
+  </a>
+  <span class="text-gray-900 font-semibold" style="font-family: Bebas Neue;
+  text-transform: uppercase;"><a href="#">Author name</a></span>
+  <p class="text-gray-700 text-sm">August 23, 2022</p>
+    </div>
+  </div>
+</div>
+</div>

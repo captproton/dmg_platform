@@ -98,27 +98,30 @@
     font-weight: 400;
   }
 
-
+  .black-text-link {
+    color: #000;
+    text-decoration: none;
+  }
 
 
 </style>
-            <!--  Thanks GreenSock!   -->
+<!--  Thanks GreenSock!   -->
 
-            <div class="slider-main">
+<div class="slider-main">
 
-            <div class="slides-container">
-              <div class="slides-inner">
-              <%= render  partial: "blog_articles/hero_slide", collection: @pinned_articles, as: :blog_article %>
+<div class="slides-container">
+  <div class="slides-inner">
+  <%= render  partial: "blog_articles/hero_slide", collection: @pinned_articles, as: :blog_article %>
 
-              </div>
-            </div>
-            
-          </div>            
+  </div>
+</div>
+
+</div>            
 
 <div class="post-area">
     <div class="posts-container">
-        <div class="masonry">
-            <%= render partial: "blog_articles/article_content_card", collection: @blog_articles, as: :blog_article %>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">            
+      <%= render partial: "blog_articles/article_content_card", collection: @blog_articles, as: :blog_article %>
         <!-- 
         https://codepen.io/matthias-douwes/pen/VwPVorP -- masonary grid
         -->
