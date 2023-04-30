@@ -1,10 +1,11 @@
 <div class="bg-white rounded-lg overflow-hidden shadow-lg">
-<a href="#">
-  <img src="https://source.unsplash.com/random" 
-       alt="Article image" 
-       class="w-full h-48 object-cover">
-</a>
+<%= link_to blog_article, 'aria-label': blog_article.title do %>
+  <%= image_tag blog_article.cover_photo, 
+      class: "w-full h-48 object-cover" %>
+
+<% end %>
 <div class="p-4">
+<!-- adjust to erb when category page is ready
   <div class="mb-2 max-w-full">
     <a href="#" class="inline-block bg-blue-200 rounded-full px-3 py-1 text-sm font-semibold text-blue-700 mr-2 mb-2">Category 1</a>
     <a href="#" class="inline-block bg-blue-200 rounded-full px-3 py-1 text-sm font-semibold text-blue-700 mr-2 mb-2">Category 2</a>
@@ -12,16 +13,23 @@
     <a href="#" class="inline-block bg-blue-200 rounded-full px-3 py-1 text-sm font-semibold text-blue-700 mr-2 mb-2">Category 4</a>
     <a href="#" class="inline-block bg-blue-200 rounded-full px-3 py-1 text-sm font-semibold text-blue-700 mr-2 mb-2">Category 5</a>
   </div>
+  -->
   <div class="relative">
     <div class="absolute inset-0 z-10">
-      <a href="http://google.com" class="block w-full h-full"></a>
+      <%= link_to blog_article, 'aria-label': blog_article.title,  class: "block w-full h-full" do %>
+      <% end %>
     </div>
     <h2 class="text-xl font-semibold mb-2 ">
-      <a href="#" class="black-text-link">Article title goes here</a>
+      <%= link_to blog_article, 'aria-label': blog_article.title, class: "black-text-link" do %>
+      
+        <%= blog_article.title %>
+      <% end %>
+      </a>
     </h2>
-    <p class="text-gray-700 text-base mb-4">Article excerpt goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor faucibus lectus, non pharetra dolor ultricies et.</p>
+    <p class="text-gray-700 text-base mb-4"><%= blog_article.excerpt %></p>
   </div>
   <a href="#">
+  <%# link to author profile %>
     <div class="flex items-center">
       <img src="https://source.unsplash.com/random" 
            alt="Author" 
@@ -29,8 +37,8 @@
     <div>
   </a>
   <span class="text-gray-900 font-semibold" style="font-family: Bebas Neue;
-  text-transform: uppercase;"><a href="#">Author name</a></span>
-  <p class="text-gray-700 text-sm">August 23, 2022</p>
+  text-transform: uppercase;"><a href="#">Michael Tanner</a></span>
+  <p class="text-gray-700 text-sm"><%= blog_article.publication_date %></p>
     </div>
   </div>
 </div>
