@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_23_220746) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_30_195326) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -69,6 +69,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_23_220746) do
     t.datetime "published_at"
     t.string "slug"
     t.index ["slug"], name: "index_blog_articles_on_slug", unique: true
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.datetime "happening_on"
+    t.string "title"
+    t.string "place"
+    t.string "more_info_link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "youtube_link"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|

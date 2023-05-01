@@ -1,0 +1,18 @@
+<div class  ="event"
+    style   ="background-color: white;
+              color: black;
+              display: flex;
+              align-items: center;
+              padding: 10px;
+              border-bottom: 1px solid #ccc;
+              margin-bottom: 20px;            
+    ">
+    <div class="event-date"><%= upcoming_event.happening_on_date%></div>
+    <div class="event-details">
+        <div class="event-title"><%= upcoming_event.title%></div>
+        <div class="event-location"><%= upcoming_event.place%></div>
+        <%= link_to "Info", 
+            upcoming_event.more_info_link, 
+            class: "bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" %>
+    </div>
+</div>
