@@ -1,6 +1,7 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  resources :events
   resources :platforms
   get 'marketing_pages/show'
   resources :blog_articles
@@ -15,7 +16,7 @@ Rails.application.routes.draw do
   get '/about-us',    to: 'home#about_us'
   get '/content',     to: 'home#content'
   get '/press',       to: 'home#press'
-  get '/slider',       to: 'home#slider'
+  get '/slider',      to: 'home#slider'
 
   get '/videos',   to: 'home#videos'
   get '/social_highlights',   to: 'home#social_highlights'
@@ -28,6 +29,7 @@ Rails.application.routes.draw do
   resources  :leads,                    only: [:new, :show]
   resources  :newsletter_subscription,  only: [:new, :show]
   resources  :marketing_pages,          only: [:show]
+  resources  :events,                   only: [:index]
 
   authenticate :user do
     mount Avo::Engine, at: Avo.configuration.root_path
