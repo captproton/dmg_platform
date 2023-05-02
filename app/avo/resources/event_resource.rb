@@ -12,6 +12,6 @@ class EventResource < Avo::BaseResource
   field :place, as: :text
   field :more_info_link, as: :text
   # add fields here
-  field :youtube_link, as: :text
+  field :youtube_unique_id, as: :text
 
 end
