@@ -64,12 +64,6 @@
     /* coloring and placement on page */
     background-color: white;
     color: black;
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-    display: flex;
-    align-items: center;
     padding: 10px;
     border-bottom: 1px solid #ccc;
     margin-bottom: 20px;      
@@ -81,6 +75,7 @@
     grid-template-rows: repeat(3, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    justify-items: center;
   }
 
 
@@ -91,21 +86,23 @@
 
   }
 
-  .event-details {
-  }
 
   .event-title {
     font-weight: bold;
     color: black;
   }
+
+  /* placement within grid */
+
   .event-title {
-    grid-column: 2 / span 3;
+    grid-column: 1 / span 4;
     grid-row: 2 / span 1;  
   }
 
   .event-location {
     grid-column: 1 / span 2;
-    grid-row: 3 / span 4;  
+    grid-row: 3 / span 1;  
+    justify-self: start
   }
 
   .event-info-button {
@@ -113,23 +110,38 @@
     grid-row: 1 / span 1;
   }
 
-  @media (min-width: 640px) {
-    .event {
-      flex-direction: row;
-    }
-    
-    .event-details {
-      margin-left: 20px;
-    }
-    
-    .event-title {
-      white-space: nowrap;
-    }
-  }
 
-  .palooza {
-    background-color: orange;
-    color: black;
+  @media screen and (min-width: 768px) {
+    /* placement within grid */
+
+    .event {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: 1fr;
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
+    }
+
+    .event-date {
+      grid-column: 1 / span 1;
+      grid-row: 1 / span 1;
+    }
+        
+    .event-title {
+      grid-column: 2 / span 2;
+      grid-row: 1 / span 1;      
+    }
+  
+    .event-location {
+      grid-column: 4 / span 1;
+      grid-row: 1 / span 1;      
+      justify-self: start
+    }
+  
+    .event-info-button {
+      grid-column: 5 / span 1;
+      grid-row: 1 / span 1;      
+    }
   }
   /* videos */
 
