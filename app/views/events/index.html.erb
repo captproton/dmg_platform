@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://paulirish.github.io/lite-youtube-embed/src/lite-yt-embed.css">
 <style>
 
   h2 {
@@ -144,6 +145,18 @@
     }
   }
   /* videos */
+  /* responsive css grid of past-event-card */
+  .past-event-cards {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .video {
+    
 
 </style>
 
@@ -160,17 +173,20 @@
   <h2>Upcoming Events</h2>
   <!-- add code to list upcoming events here -->
   <div class="event-list" style="margin-left: 20px;margin-right: 20px;">
-    <%= render partial: "upcoming_event_card", collection: @events, as: :upcoming_event %>
+    <%= render partial: "upcoming_event_card", collection: @upcoming_events, as: :upcoming_event %>
   </div>
 </section>
 
 <section class="videos">
   <h2>Watch Past Events</h2>
   <!-- add code to show youtube videos and link to youtube playlist here -->
+
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">            
-    <%= render partial: "blog_articles/article_content_card", 
-        collection: @blog_articles, 
-        as: :blog_article %>
+    <%#= render partial: "events/past_events_card", 
+        collection: @past_events, 
+        as: :past_event %>
+    <%= render partial: "past_event_card", collection: @past_events, as: :past_event %>
+
   </div>
 </section>
 <section class="contact-us">
@@ -232,4 +248,6 @@
 </div>
 
 </section>
+
+<script type="text/javascript" src="https://paulirish.github.io/lite-youtube-embed/src/lite-yt-embed.js"></script>
 

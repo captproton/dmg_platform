@@ -2,7 +2,7 @@ class EventsController < ApplicationController
     def index
       @blog_articles = BlogArticle.published
       @upcoming_events = Event.upcoming_events
-      @events = Event.all
+      @past_events = Event.past_events
 
     end
   end
