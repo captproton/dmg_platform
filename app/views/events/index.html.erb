@@ -1,0 +1,258 @@
+<link rel="stylesheet" href="https://paulirish.github.io/lite-youtube-embed/src/lite-yt-embed.css">
+<style>
+
+  h2 {
+    color: #fff;
+    font-family: Bebas Neue;
+    text-transform: uppercase;
+    font-size: 45px;
+    line-height: 50px;
+    font-weight: 400;
+    margin-bottom: 7px;
+  }
+  h3 {
+    font-family: Bebas Neue;
+    font-size: 35px;
+    line-height: 35px;
+    font-weight: 400;    
+    }
+  h4 {
+    font-family: Oswald;
+    text-transform: uppercase;
+    font-size: 25px;
+    line-height: 35px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #fff;
+  }
+  input[type=text], select, textarea, .message {
+    font-size: 15px;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 8px;
+    background-color: rgba(255,255,255,.1);
+    border-color: rgba(255,255,255,0);
+    color: #fff;
+    border-radius: 4px;
+    border: 2px solid transparent;
+    font-family: inherit;
+    line-height: 24px;
+    transition: all .2s ease;      
+  }
+  label {
+    font-family: Oswald;
+    text-transform: uppercase !important;
+    margin-top: 20px;
+    margin-bottom: 6px;
+    font-size: 18px !important;
+    line-height: 28px;
+    font-weight: 700 !important;
+    color: #fff !important;
+  }
+  #
+  #
+  /* upcoming events */
+  .event-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 100px;
+    margin-right: 20px;
+  }
+
+  .event {
+    /* coloring and placement on page */
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;      
+  }
+  .event {
+    /* placement of children of element */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    justify-items: center;
+  }
+
+
+  
+  .event-date {
+    color: black;
+    font-weight: bold;
+
+  }
+
+
+  .event-title {
+    font-weight: bold;
+    color: black;
+  }
+
+  /* placement within grid */
+
+  .event-title {
+    grid-column: 1 / span 4;
+    grid-row: 2 / span 1;  
+  }
+
+  .event-location {
+    grid-column: 1 / span 2;
+    grid-row: 3 / span 1;  
+    justify-self: start
+  }
+
+  .event-info-button {
+    grid-column: 4 / span 1;
+    grid-row: 1 / span 1;
+  }
+
+
+  @media screen and (min-width: 768px) {
+    /* placement within grid */
+
+    .event {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: 1fr;
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
+    }
+
+    .event-date {
+      grid-column: 1 / span 1;
+      grid-row: 1 / span 1;
+    }
+        
+    .event-title {
+      grid-column: 2 / span 2;
+      grid-row: 1 / span 1;      
+    }
+  
+    .event-location {
+      grid-column: 4 / span 1;
+      grid-row: 1 / span 1;      
+      justify-self: start
+    }
+  
+    .event-info-button {
+      grid-column: 5 / span 1;
+      grid-row: 1 / span 1;      
+    }
+  }
+  /* videos */
+  /* responsive css grid of past-event-card */
+  .past-event-cards {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .video {
+    
+
+</style>
+
+<div class="hero" 
+        style="background: url('<%= image_url "events.jpg" %>'); 
+        background-size: cover;
+        background-position: center;        
+        height: 45vh;
+        ">
+</div>
+
+
+<section class="upcoming-events">
+  <h2>Upcoming Events</h2>
+  <!-- add code to list upcoming events here -->
+  <div class="event-list" style="margin-left: 20px;margin-right: 20px;">
+    <%= render partial: "upcoming_event_card", collection: @upcoming_events, as: :upcoming_event %>
+  </div>
+</section>
+
+<% if @past_events.length > 0 %>
+
+  <section class="videos">
+    <h2>Watch Past Events</h2>
+    <!-- add code to show youtube videos and link to youtube playlist here -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">            
+      <%= render partial: "past_event_card", collection: @past_events, as: :past_event %>
+    </div>
+  </section>
+
+ <% else %>
+  <section class="videos">
+    <h2>Watch Past Events</h2>
+    <p>There are no past events to display.</p>
+  </section> 
+<% end %>
+
+<section class="contact-us">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+  <div>
+
+    <h2 class="text-2xl md:text-4xl lg:text-6xl">Hire Us to Speak</h2>
+    <h4>KEYNOTE SPEAKING | FIRESIDE CHAT | Q&A</h4>
+
+    <h3 class="text-xl md:text-2xl lg:text-4xl">Press</h3>
+    <p>Not afraid to tell it like we see it, each member of the Dice Media Goup team is an entertaining, thought-provoking business practitioner rooted in the notion of marketing in the year we live in and betting on one’s strengths to ensure a path to success and happiness. We will leave your audience entertained, motivated, and begging for more.</p>
+
+    <h3 class="text-xl md:text-2xl lg:text-4xl">Advertising</h3>
+    <p>For all advertising opportunities, including sponsorships, native, and more</p>
+
+    <h3 class="text-xl md:text-2xl lg:text-4xl">General Inquiry</h3>
+    <p>Basically if nothing else applies to you, hit me here</p>
+  </div>
+  <div>
+    <!-- rails form for leads resource using tailwindcss -->
+    <%= form_with model: @lead, class: "w-full max-w-lg" do |f| %>
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full px-3">
+          <%= f.label :name, class: "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" %>
+          <%= f.text_field :name, class: "appearance-none block w-full  text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight" %>
+        </div>
+      </div>
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full px-3">
+          <%= f.label :email, class: "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" %>
+          <%= f.text_field :email, class: "appearance-none block w-full  text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none " %>
+        </div>
+      </div>
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full px-3">
+          <%= f.label :phone, class: "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" %>
+          <%= f.text_field :phone, class: "appearance-none block w-full  text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none " %>
+        </div>
+      </div>
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full px-3">
+          <%= f.label :subject, class: "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" %>
+          <%= f.text_field :subject, class: "appearance-none block w-full  text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none" %>
+        </div>
+      </div>
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full px-3">
+          <%= f.label :message, class: "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" %>
+          <%= f.text_area :message, class: "appearance-none block w-full  text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none" %>
+        </div>
+      </div>
+        <div class="md:flex md:items-center">
+            <div class="w-full px-3">
+                <%= f.submit "Submit", class: "shadow bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" %>  
+            </div>
+        </div>
+    <% end %>
+  </div>  
+</div>
+
+</section>
+
+<script type="text/javascript" src="https://paulirish.github.io/lite-youtube-embed/src/lite-yt-embed.js"></script>
+
