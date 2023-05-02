@@ -177,18 +177,23 @@
   </div>
 </section>
 
-<section class="videos">
-  <h2>Watch Past Events</h2>
-  <!-- add code to show youtube videos and link to youtube playlist here -->
+<% if @past_events.length > 0 %>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">            
-    <%#= render partial: "events/past_events_card", 
-        collection: @past_events, 
-        as: :past_event %>
-    <%= render partial: "past_event_card", collection: @past_events, as: :past_event %>
+  <section class="videos">
+    <h2>Watch Past Events</h2>
+    <!-- add code to show youtube videos and link to youtube playlist here -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">            
+      <%= render partial: "past_event_card", collection: @past_events, as: :past_event %>
+    </div>
+  </section>
 
-  </div>
-</section>
+ <% else %>
+  <section class="videos">
+    <h2>Watch Past Events</h2>
+    <p>There are no past events to display.</p>
+  </section> 
+<% end %>
+
 <section class="contact-us">
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
   <div>
