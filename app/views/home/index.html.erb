@@ -122,15 +122,16 @@
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     <% @positioning_articles.each do |article| %>
-
-        <div class="card bg-cover bg-center" 
-            style="position: relative">
-            <!-- image absolutely positioned inside card -->
-            <img class="absolute h-full w-full object-cover" src="<%= url_for(article.cover_photo) %>" alt="<%= article.cover_photo %>">
-            <div class="card-overlay flex justify-center items-center">
-                <h5 class="card-title text-white text-center text-2xl font-bold"><%= article.title %> <% url_for(article.cover_photo) %></h5>
+        <%= link_to article, 'aria-label': article.title,  class: "block w-full h-full" do %>      
+            <div class="card bg-cover bg-center" 
+                style="position: relative">
+                <!-- image absolutely positioned inside card -->
+                <img class="absolute h-full w-full object-cover" src="<%= url_for(article.cover_photo) %>" alt="<%= article.cover_photo %>">
+                <div class="card-overlay flex justify-center items-center">
+                    <h5 class="card-title text-white text-center text-2xl font-bold"><%= article.title %> <% url_for(article.cover_photo) %></h5>
+                </div>
             </div>
-        </div>
+        <% end %>
     <% end %>
   </div>
 </section>
