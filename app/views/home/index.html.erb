@@ -89,6 +89,26 @@
         white-space: nowrap;
         width: 1px;
     }
+
+    /* custom poster image */
+    .card {
+        position: relative;
+        height: 400px;
+      }
+      
+      .card-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      
+      .card-title {
+        text-shadow: 1px 1px #000;
+      }
+      
 </style>
 <section class="container mx-auto px-4 py-8">
 <h1 class="text-2xl md:text-4xl lg:text-6xl"><%= @intro_article.title %></h1>
@@ -96,23 +116,37 @@
 <div><%= @intro_article.content %></div>
 
 </section>
+
+
 <section class="container mx-auto px-4 py-8">
-    <!-- leading blog articles -->
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     <% @positioning_articles.each do |article| %>
-        <h1 class="text-2xl md:text-4xl lg:text-6xl"><%= article.title %></h1>
+
+        <div class="card bg-cover bg-center" 
+            style="position: relative">
+            <!-- image absolutely positioned inside card -->
+            <img class="absolute h-full w-full object-cover" src="<%= url_for(article.cover_photo) %>" alt="<%= article.cover_photo %>">
+            <div class="card-overlay flex justify-center items-center">
+                <h5 class="card-title text-white text-center text-2xl font-bold"><%= article.title %> <% url_for(article.cover_photo) %></h5>
+            </div>
+        </div>
     <% end %>
+  </div>
 </section>
+
+
+
 
 
 <section class="container mx-auto px-4 py-8">
     <!-- leading blog articles -->
     <h2 class="text-2xl md:text-4xl lg:text-6xl">READ THIS</h2>
-    <% @pinned_articles.each do |article| %>
-        <h1 class="text-2xl md:text-4xl lg:text-6xl"><%= article.title %></h1>
-        <div> <%= article.excerpt %></div>
-    <% end %>
+    <!-- a responsive collection of cards that is a column on iphone and a row two columns wide on larger formats -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <%= render  partial: "home/blog_article_card", collection: @pinned_articles.first(3), as: :blog_article %>
+    </div>
 </section>
-
 
 
 <!-- <lite-youtube videoid="ogfYd705cRs" playlabel="Play: Keynote (Google I/O '18)" style="background-image: url(&quot;https://i.ytimg.com/vi/ogfYd705cRs/hqdefault.jpg&quot;);">
