@@ -14,6 +14,7 @@ class MarketingPageResource < Avo::BaseResource
   # Fields generated from the model
   field :title, as: :text
   # add fields here
+  field :subtitle, as: :text
   field :content, as: :trix
   field :cover_photo, as: :file, is_image: true, link_to_resource: true
   field :tags,
