@@ -1,5 +1,7 @@
 <!-- hero image with the title text and subtitle text on the left site -->
-<% hero_background_image = url_for(@page.cover_photo)%>
+<% @page.cover_photo.present? ? image_url = url_for(@page.cover_photo)  : image_url = (asset_path 'image_not_found.jpg')  %>
+
+<% hero_background_image = image_url %>
 
 
 <div class="grid grid-cols-2 grid-rows-3 bg-cover bg-center bg-no-repeat" style="background-image: url('<%= hero_background_image %>'); height: 400px;">

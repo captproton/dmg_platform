@@ -1,8 +1,7 @@
     <!--IMAGE-->
+    <% article.cover_photo.present? ? image_url = url_for(article.cover_photo)  : image_url = (asset_path 'image_not_found.jpg')  %>
     <div class="slider__item__image is-background">
-        <%# <img src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="website"> %>
-    <%= image_tag article.cover_photo %>
-        
+        <%= image_tag image_url %>        
     </div>
     <!--IMAGE-->
 
