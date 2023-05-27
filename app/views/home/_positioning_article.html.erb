@@ -1,0 +1,11 @@
+<% article.cover_photo.present? ? image_url = url_for(article.cover_photo)  : image_url = (asset_path 'image_not_found.jpg')  %>
+<%= link_to article, 'aria-label': article.title,  class: "block w-full h-full" do %>      
+    <div class="card bg-cover bg-center" 
+        style="position: relative">
+        <!-- image absolutely positioned inside card -->
+        <img class="absolute h-full w-full object-cover" src="<%= image_url %>" alt="<%= image_url %>">
+        <div class="card-overlay flex justify-center items-center">
+            <h5 class="card-title text-white text-center text-2xl font-bold"><%= article.title %> <% image_url %></h5>
+        </div>
+    </div>
+<% end %>

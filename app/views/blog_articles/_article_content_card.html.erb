@@ -1,6 +1,8 @@
 <div class="bg-white rounded-lg overflow-hidden shadow-lg">
 <%= link_to blog_article, 'aria-label': blog_article.title do %>
-  <%= image_tag blog_article.cover_photo, 
+      <% blog_article.cover_photo.present? ? image_url = url_for(blog_article.cover_photo)  : image_url = (asset_path 'image_not_found.jpg')  %>
+
+  <%= image_tag image_url, 
       class: "w-full h-48 object-cover" %>
 
 <% end %>
