@@ -1,23 +1,24 @@
 <%# open source: https://github.com/fireship-io/222-responsive-icon-nav-css 
     icons from fontawesome.com
 %>
-<%   @home_link   = Navigation.home
+<%  
+    default_home  = OpenStruct.new({name: Navigation.default_name, url: Navigation.default_home_url, svg_icon: Navigation.default_home_svg_icon})
+    @home_link    = Navigation.find_by(key: "home") || default_home
     @main_links   = Navigation.main_links
 %>
 <nav class="navbar">
     <ul class="navbar-nav">
+      <%# home %>
       <li class="logo">
-        <a href="<%= Navigation.home.url %>" class="nav-link">
+        <a href="<%= @home_link.url %>" class="nav-link">
           <span class="link-text logo-text"><%= @home_link.name %></span>
-          <%= Navigation.home.svg_icon.html_safe %>
+          <%= @home_link.svg_icon.html_safe %>
         </a>
       </li>
+      <%# nav items that are not 'home' %>
       <%= render  partial: "shared/nav_item", collection: Navigation.main_links, as: :link %>
 
-
-
-
-
+      <%# themes %>
       <li class="nav-item" id="themeButton">
         <a href="#" class="nav-link">
           <svg
