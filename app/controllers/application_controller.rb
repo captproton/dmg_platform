@@ -6,6 +6,9 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  @home_link              = Navigation.home
+  @main_links             = Navigation.main_links
+
   protected
 
     def configure_permitted_parameters
