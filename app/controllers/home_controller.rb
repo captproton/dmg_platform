@@ -1,10 +1,10 @@
 class HomeController < ApplicationController
   def index
-    @intro_article =MarketingPage.tagged_with(["home", "intro"]).first
-    @positioning_articles = MarketingPage
-      .tagged_with(["home", "more-info"], :match_any => true)
-      .tagged_with(["more-info"], :match_any => true)
-    @pinned_articles = BlogArticle.pinned
+    @intro_article          = MarketingPage.tagged_with(["home", "intro"]).first
+    @positioning_articles   = MarketingPage
+                              .tagged_with(["home", "more-info"], :match_any => true)
+                              .tagged_with(["more-info"], :match_any => true)
+    @pinned_articles        = BlogArticle.pinned
   end
 
   def terms

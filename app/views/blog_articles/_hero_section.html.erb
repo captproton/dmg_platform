@@ -27,7 +27,9 @@
             </div><!--/inner-wrap-->
 
         </div><!--/recent-post-container-->
-        <%= image_tag @blog_article.cover_photo, class: "sp-no-webp attachment-large size-large skip-lazy wp-post-image sp-no-webp" %>
+        <% @blog_article.cover_photo.present? ? image_url = url_for(@blog_article.cover_photo)  : image_url = (asset_path 'image_not_found.jpg')  %>
+
+        <%= image_tag image_url, class: "sp-no-webp attachment-large size-large skip-lazy wp-post-image sp-no-webp" %>
 
     </div>
 

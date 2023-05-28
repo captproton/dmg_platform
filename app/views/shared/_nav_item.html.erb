@@ -1,0 +1,17 @@
+<%  
+    link.url       ||= Navigation.default_url
+    link.name      ||= Navigation.default_name
+%>
+<li class="nav-item">
+  <%= link_to  link.url, class: "nav-link" do %>
+      <% if link.svg_icon.present? %>
+        <%= link.svg_icon.html_safe %>
+      <% else %>
+        <%= Navigation.default_svg_icon.html_safe %>
+      <% end %>
+      
+
+    <span class="link-text"><%= link.name.capitalize %></span>
+
+  <% end %>
+</li>
