@@ -1,0 +1,8 @@
+      <li class="nav-item">
+        <%= link_to  link.url, class: "nav-link" do %>
+            <%= link.svg_icon.html_safe %>
+
+          <span class="link-text"><%= link.name.capitalize %></span>
+
+        <% end %>
+      </li>
