@@ -1,0 +1,31 @@
+<%  
+    link             = @contact_link  || link = OpenStruct.new(Hash.new)
+    link.url       ||= Navigation.default_url
+    link.name      ||= Navigation.default_name
+%>
+<div class="grid grid-cols-3 gap-4">
+  <div class="max-w-0 justify-end bg-blue-500">
+    <!-- Left content -->
+  </div>
+  <div ></div>
+  <div class="max-w-full flex justify-end">
+    <!-- Right content -->
+
+    <ul class="navbar-nav">
+      <div class="max-w-full justify-end">
+      <li class="nav-item">
+        <%= link_to  link.url, class: "nav-link" do %>
+          <span class="label px-3 text-slate-700"><%= link.name.capitalize %></span>
+          <% if link.svg_icon.present? %>
+            <%= link.svg_icon.html_safe %>
+          <% else %>
+            <%= Navigation.default_svg_icon.html_safe %>
+          <% end %>
+          <span class="link-text"><%= link.name.capitalize %></span>
+        <% end %>
+      </li>
+    </ul>
+
+  </div>
+</div>
+
