@@ -5,6 +5,8 @@ class HomeController < ApplicationController
                               .tagged_with(["home", "more-info"], :match_any => true)
                               .tagged_with(["more-info"], :match_any => true)
     @pinned_articles        = BlogArticle.pinned
+
+    @contact_link           = Navigation.find_by(key: "contact")
   end
 
   def terms
