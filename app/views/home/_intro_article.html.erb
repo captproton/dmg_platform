@@ -1,13 +1,17 @@
 <div class="flex flex-col items-center justify-center">
-    <% @intro_article.cover_photo.present? ? image_url = url_for(@intro_article.cover_photo)  : image_url = (asset_path 'image_not_found.jpg')  %>
-    <%= image_tag image_url, height: "225", width: "400" %>
+    <% if @intro_article.present? %>
+        <% @intro_article.cover_photo.present? ? image_url = url_for(@intro_article.cover_photo)  : image_url = (asset_path 'image_not_found.jpg')  %>
+        <%= image_tag image_url, height: "225", width: "400" %>
 
-    <h1 class="text-2xl md:text-4xl lg:text-6xl">
-        <%= @intro_article.title %>
-    </h1>
-    <div class="another">
-        <div class="max-w-4xl">
-            <%= @intro_article.content %>  
+        <h1 class="text-2xl md:text-4xl lg:text-6xl">
+            <%= @intro_article.title %>
+        </h1>
+        <div class="another">
+            <div class="max-w-4xl">
+                <%= @intro_article.content %>  
+            </div>
         </div>
-    </div>
+    <% else %>
+        <p>There is no intro article to display. You need a marketing article with the tags [home], [intro].</p>
+    <% end %>
 </div>
