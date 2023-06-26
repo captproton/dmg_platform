@@ -1,128 +1,58 @@
-<%# open source: https://github.com/fireship-io/222-responsive-icon-nav-css 
-    icons from fontawesome.com
-%>
-<%  
-    default_home  = OpenStruct.new({name: Navigation.default_name, url: Navigation.default_home_url, svg_icon: Navigation.default_home_svg_icon})
-    @home_link    = Navigation.find_by(key: "home") || default_home
-    @main_links   = Navigation.main_links
-%>
-<nav class="navbar">
-    <ul class="navbar-nav">
-      <%# home %>
-      <li class="logo">
-        <a href="<%= @home_link.url %>" class="nav-link">
-          <span class="link-text logo-text"><%= @home_link.name %></span>
-          <%= @home_link.svg_icon.html_safe %>
-        </a>
-      </li>
-      <%# nav items that are not 'home' %>
-      <%= render  partial: "shared/nav_item", collection: Navigation.main_links, as: :link %>
-
-      <%# themes %>
-      <li class="nav-item" id="themeButton">
-        <a href="#" class="nav-link">
-          <svg
-            class="theme-icon"
-            id="lightIcon"
-            aria-hidden="true"
-            focusable="false"
-            data-prefix="fad"
-            data-icon="moon-stars"
-            role="img"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512"
-            class="svg-inline--fa fa-moon-stars fa-w-16 fa-7x"
-          >
-            <g class="fa-group">
-              <path
-                fill="currentColor"
-                d="M320 32L304 0l-16 32-32 16 32 16 16 32 16-32 32-16zm138.7 149.3L432 128l-26.7 53.3L352 208l53.3 26.7L432 288l26.7-53.3L512 208z"
-                class="fa-secondary"
-              ></path>
-              <path
-                fill="currentColor"
-                d="M332.2 426.4c8.1-1.6 13.9 8 8.6 14.5a191.18 191.18 0 0 1-149 71.1C85.8 512 0 426 0 320c0-120 108.7-210.6 227-188.8 8.2 1.6 10.1 12.6 2.8 16.7a150.3 150.3 0 0 0-76.1 130.8c0 94 85.4 165.4 178.5 147.7z"
-                class="fa-primary"
-              ></path>
-            </g>
-          </svg>
-          <svg
-            class="theme-icon"
-            id="solarIcon"
-            aria-hidden="true"
-            focusable="false"
-            data-prefix="fad"
-            data-icon="sun"
-            role="img"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512"
-            class="svg-inline--fa fa-sun fa-w-16 fa-7x"
-          >
-            <g class="fa-group">
-              <path
-                fill="currentColor"
-                d="M502.42 240.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.41-94.8a17.31 17.31 0 0 0-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4a17.31 17.31 0 0 0 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.41-33.5 47.3 94.7a17.31 17.31 0 0 0 31 0l47.31-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3a17.33 17.33 0 0 0 .2-31.1zm-155.9 106c-49.91 49.9-131.11 49.9-181 0a128.13 128.13 0 0 1 0-181c49.9-49.9 131.1-49.9 181 0a128.13 128.13 0 0 1 0 181z"
-                class="fa-secondary"
-              ></path>
-              <path
-                fill="currentColor"
-                d="M352 256a96 96 0 1 1-96-96 96.15 96.15 0 0 1 96 96z"
-                class="fa-primary"
-              ></path>
-            </g>
-          </svg>
-          <svg
-            class="theme-icon"
-            id="darkIcon"
-            aria-hidden="true"
-            focusable="false"
-            data-prefix="fad"
-            data-icon="sunglasses"
-            role="img"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 576 512"
-            class="svg-inline--fa fa-sunglasses fa-w-18 fa-7x"
-          >
-            <g class="fa-group">
-              <path
-                fill="currentColor"
-                d="M574.09 280.38L528.75 98.66a87.94 87.94 0 0 0-113.19-62.14l-15.25 5.08a16 16 0 0 0-10.12 20.25L395.25 77a16 16 0 0 0 20.22 10.13l13.19-4.39c10.87-3.63 23-3.57 33.15 1.73a39.59 39.59 0 0 1 20.38 25.81l38.47 153.83a276.7 276.7 0 0 0-81.22-12.47c-34.75 0-74 7-114.85 26.75h-73.18c-40.85-19.75-80.07-26.75-114.85-26.75a276.75 276.75 0 0 0-81.22 12.45l38.47-153.8a39.61 39.61 0 0 1 20.38-25.82c10.15-5.29 22.28-5.34 33.15-1.73l13.16 4.39A16 16 0 0 0 180.75 77l5.06-15.19a16 16 0 0 0-10.12-20.21l-15.25-5.08A87.95 87.95 0 0 0 47.25 98.65L1.91 280.38A75.35 75.35 0 0 0 0 295.86v70.25C0 429 51.59 480 115.19 480h37.12c60.28 0 110.38-45.94 114.88-105.37l2.93-38.63h35.76l2.93 38.63c4.5 59.43 54.6 105.37 114.88 105.37h37.12C524.41 480 576 429 576 366.13v-70.25a62.67 62.67 0 0 0-1.91-15.5zM203.38 369.8c-2 25.9-24.41 46.2-51.07 46.2h-37.12C87 416 64 393.63 64 366.11v-37.55a217.35 217.35 0 0 1 72.59-12.9 196.51 196.51 0 0 1 69.91 12.9zM512 366.13c0 27.5-23 49.87-51.19 49.87h-37.12c-26.69 0-49.1-20.3-51.07-46.2l-3.12-41.24a196.55 196.55 0 0 1 69.94-12.9A217.41 217.41 0 0 1 512 328.58z"
-                class="fa-secondary"
-              ></path>
-              <path
-                fill="currentColor"
-                d="M64.19 367.9c0-.61-.19-1.18-.19-1.8 0 27.53 23 49.9 51.19 49.9h37.12c26.66 0 49.1-20.3 51.07-46.2l3.12-41.24c-14-5.29-28.31-8.38-42.78-10.42zm404-50l-95.83 47.91.3 4c2 25.9 24.38 46.2 51.07 46.2h37.12C489 416 512 393.63 512 366.13v-37.55a227.76 227.76 0 0 0-43.85-10.66z"
-                class="fa-primary"
-              ></path>
-            </g>
-          </svg>
-          <span class="link-text">Themify</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
-
-  <script>
-    const themeMap = {
-    dark: "light",
-    light: "solar",
-    solar: "dark"
-    };
-
-    const theme = localStorage.getItem('theme')
-    || (tmp = Object.keys(themeMap)[0],
-        localStorage.setItem('theme', tmp),
-        tmp);
-    const bodyClass = document.body.classList;
-    bodyClass.add(theme);
-
-    function toggleTheme() {
-    const current = localStorage.getItem('theme');
-    const next = themeMap[current];
-
-    bodyClass.replace(current, next);
-    localStorage.setItem('theme', next);
-    }
-
-    document.getElementById('themeButton').onclick = toggleTheme;
-</script>
+<header class="absolute inset-x-0 top-0 z-50">
+<div class="mx-auto max-w-7xl">
+  <div class="px-6 pt-6 lg:max-w-2xl lg:pl-8 lg:pr-0">
+    <nav class="flex items-center justify-between lg:justify-start" aria-label="Global">
+      <a href="#" class="-m-1.5 p-1.5">
+        <span class="sr-only">Your Company</span>
+        <img alt="Your Company" class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600">
+      </a>
+      <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700 lg:hidden">
+        <span class="sr-only">Open main menu</span>
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+      <div class="hidden lg:ml-12 lg:flex lg:gap-x-14">
+        <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Product</a>
+        <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Features</a>
+        <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Marketplace</a>
+        <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Company</a>
+        <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Log in</a>
+      </div>
+    </nav>
+  </div>
+</div>
+<!-- Mobile menu, show/hide based on menu open state. -->
+<div class="lg:hidden" role="dialog" aria-modal="true">
+  <!-- Background backdrop, show/hide based on slide-over state. -->
+  <div class="fixed inset-0 z-50"></div>
+  <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+    <div class="flex items-center justify-between">
+      <a href="#" class="-m-1.5 p-1.5">
+        <span class="sr-only">Your Company</span>
+        <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
+      </a>
+      <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+        <span class="sr-only">Close menu</span>
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <div class="mt-6 flow-root">
+      <div class="-my-6 divide-y divide-gray-500/10">
+        <div class="space-y-2 py-6">
+          <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Product</a>
+          <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Features</a>
+          <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Marketplace</a>
+          <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Company</a>
+          <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in</a>
+        </div>
+        <div class="py-6">
+          <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
