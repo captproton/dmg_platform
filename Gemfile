@@ -87,6 +87,7 @@ gem "sitemap_generator", "~> 6.1"
 gem "whenever", require: false
 gem "responders", github: "heartcombo/responders", branch: "main"
 
+# app-specific gems
 group :development, :test do
   gem "rspec-rails"
 end
@@ -104,3 +105,5 @@ gem "letter_opener", "~> 1.8"
 gem "inline_svg", "~> 1.9"
 
 gem "acts-as-taggable-on", "~> 9.0"
+
+gem "postmark-rails", "~> 0.22.1"
