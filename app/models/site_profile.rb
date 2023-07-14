@@ -1,0 +1,2 @@
+class SiteProfile < ApplicationRecord
+end

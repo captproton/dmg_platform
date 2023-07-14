@@ -1,6 +1,8 @@
 class LeadsController < ApplicationController
+    layout 'application'
     def new
         @lead = Lead.new
+        @site_profile = SiteProfile.first
     end
 
     def show
@@ -19,7 +21,7 @@ class LeadsController < ApplicationController
 
     private
         def lead_params
-            params.require(:lead).permit(:name, :email_address, :phone, :message_body, :subject)
+            params.require(:lead).permit(:first_name, :last_name, :email_address, :phone, :message_body, :subject)
         end
         
 end

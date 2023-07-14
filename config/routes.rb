@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get '/privacy',     to: 'home#privacy'
   get '/terms',       to: 'home#terms'
 
-  get '/contact-us',  to: 'home#contact_us'
+  get '/contact-us',  to: 'leads#new'
   get '/about-us',    to: 'home#about_us'
   get '/content',     to: 'home#content'
   get '/press',       to: 'home#press'

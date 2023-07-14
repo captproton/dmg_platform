@@ -12,5 +12,11 @@ class LeadResource < Avo::BaseResource
   field :email_address, as: :text
   field :subject, as: :text
   field :message_body, as: :textarea
+  field :state,
+  as: :select,
+  enum: ::Lead.states,
+  display_with_value: true,
+  placeholder: 'Choose a state.'
+
   # add fields here
 end

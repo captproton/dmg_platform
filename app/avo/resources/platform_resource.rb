@@ -11,5 +11,11 @@ class PlatformResource < Avo::BaseResource
   field :name, as: :text
   field :svg_icon, as: :textarea
   field :link, as: :text
+  field :kind,
+  as: :select,
+  enum: ::Platform.kinds,
+  display_with_value: true,
+  placeholder: 'Choose the type of the platform.'
+
   # add fields here
 end

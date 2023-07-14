@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_28_021507) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_13_235952) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -101,6 +101,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_28_021507) do
     t.text "message_body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
   end
 
   create_table "legals", force: :cascade do |t|
@@ -148,6 +150,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_28_021507) do
     t.string "link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "kind"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -168,6 +171,19 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_28_021507) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_services_on_user_id"
+  end
+
+  create_table "site_profiles", force: :cascade do |t|
+    t.string "street01"
+    t.string "street02"
+    t.string "city"
+    t.string "state"
+    t.string "postal_code"
+    t.string "phone"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "contact_message"
   end
 
   create_table "taggings", force: :cascade do |t|

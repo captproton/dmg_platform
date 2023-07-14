@@ -1,13 +1,12 @@
-<!-- html.erb show page of Lead with the attributes  name,phone,email_address, subject, message_body using tailwindcss -->
+<!-- -->
+<link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
 
-<h1 class="mb-2 mt-0 text-5xl font-medium leading-tight text-primary" >thank you for contacting us</h1>
-<h2 class="mb-2 mt-0 text-5xl font-small leading-tight text-primary" >we will get back to you soon</h2>
+    <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl  lg:px-8 lg:py-32 xl:gap-x-24">
+        <p class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Thanks reaching out</p>
+        <p class="mt-2 text-base text-gray-500">We appreciate your reaching out. We will get back to you as soon as possible. So hang tight and we’ll send you a reply very soon!</p>
 
-<h3>your details are as follows</h3>
-<p>name: <%= @lead.name %></p>
-<p>phone: <%= @lead.phone %></p>
-<p>email: <%= @lead.email_address %></p>
-<p>subject: <%= @lead.subject %></p>
-<p>message: <%= @lead.message_body %></p>
-<p>&nbsp;</p>
-<%= link_to "<< back to home", root_path, class: "btn btn-primary text-slate-50 bg-sky-500/75" %>
+
+    </div>
