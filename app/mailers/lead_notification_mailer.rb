@@ -1,7 +1,7 @@
 class LeadNotificationMailer < ApplicationMailer
     def lead_notification(*args)
         # array of emails to send to
-        support_team_email_group = User.support_team.map {|u| u.email} << "noreply@dicemediagroup0.com"
+        support_team_email_group = User.support_team.map {|u| u.email} << "noreply@dicemediagroup.com"
         puts "lead notification args: #{args}"
         # @user = params[:user]
         @lead = params[:lead]
