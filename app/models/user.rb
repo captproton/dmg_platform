@@ -9,4 +9,7 @@ class User < ApplicationRecord
 
   has_many :notifications, as: :recipient, dependent: :destroy
   has_many :services
+
+  scope :support_team, -> { where("support_team = ?", true) }
+
 end
