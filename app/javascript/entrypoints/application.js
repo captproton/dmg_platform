@@ -15,14 +15,27 @@ console.log('Visit the guide for more information: ', 'https://vite-ruby.netlify
 
 // Example: Load Rails libraries in Vite.
 //
-// import * as Turbo from '@hotwired/turbo'
-// Turbo.start()
-//
+import * as Turbo from '@hotwired/turbo'
+Turbo.start()
+
 // import ActiveStorage from '@rails/activestorage'
 // ActiveStorage.start()
-//
-// // Import all channels.
-// const channels = import.meta.globEager('./**/*_channel.js')
+
+// Import all channels.
+const channels = import.meta.globEager('./**/*_channel.js')
 
 // Example: Import a stylesheet in app/frontend/index.css
 // import '~/index.css'
+
+// Create vue app
+import { createApp } from 'vue';
+
+// Import vue components
+import App from '../components/App.vue';
+import Sitenav from '../components/Sitenav.vue';
+
+// Mount vue app
+const app = createApp(App).mount('#app');
+
+// Mount vue components
+const sitenav = createApp(Sitenav).mount('#sitenav');
