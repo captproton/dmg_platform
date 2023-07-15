@@ -70,7 +70,7 @@ Rails.application.configure do
 
   # Postmark config
   # Set Action Mailer to use SMTP in your config/application.rb file.
-  config.action_mailer.delivery_method = :postmark
+
   # config.action_mailer.smtp_settings = {
   #   address:              'smtp.postmarkapp.com',
   #   port:                 587,
@@ -80,8 +80,9 @@ Rails.application.configure do
   #   authentication:       :plain,
   #   enable_starttls_auto: true
   # }
-  config.action_mailer.postmark_settings = {
-    api_token: "nowistherandotime" # Rails.application.secrets.postmark_api_token
+
+  config.action_mailer.delivery_method = :postmark
+  config.action_mailer.postmark_settings = { api_token: Rails.application.credentials.postmark_api_token }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
